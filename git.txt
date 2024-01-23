@@ -1,0 +1,26 @@
+git checkout -b develop
+git checkout -b feature
+
+git log --all --pretty=oneline --graph
+
+git reset --soft 30494317cde4419be779c14306561e0eaa78b88b (or --hard)
+
+squash:
+
+git rebase -i HEAD~2
+
+commit 8b3bfb0f9067a7767f676fb6ef1318c92668ec16 (HEAD)
+Author: Daniil.K <dlkay@yandex.ru>
+Date:   Tue Mar 30 17:57:42 2021 +0300
+
+    L-04: Add calculate.py and update documentation
+
+
+git checkout -b experiment main
+
+git checkout develop -- docs/README.md
+git checkout develop -- calculate.py
+
+git rm circle.py square.py
+git commit -m "Remove circle.py and square.py for cleaner experiments"
+
